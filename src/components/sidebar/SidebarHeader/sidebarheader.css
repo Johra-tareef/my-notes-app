@@ -1,0 +1,48 @@
+.sidebar-app-header p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-container {
+   width: 100%;
+  display: flex;
+  justify-content: flex-end; 
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.add-note-btn {
+  background-color: #4E61F6;
+  font-size: 16px;
+  border-radius: 12px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;                
+
+}
+
+@media (max-width: 768px) {
+
+
+  .sidebar-app-header p {
+    display: none;
+  }
+
+
+ .btn-container {
+    justify-content: flex-end; 
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  .add-note-btn {
+    width: auto;     
+    font-size: 16px;
+    padding: 10px 20px;  
+    border-radius: 12px;
+  }
+
+}

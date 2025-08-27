@@ -1,0 +1,26 @@
+.sidebar-app {
+  width: 25%;
+  height: 100%;
+  background-color: #F9FAFB;
+  font-family: 'Inter', sans-serif;
+  color: #131927;
+  font-size: 24px;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 1px 0px 9px 1px rgba(0, 0, 0, 0.25);
+}
+
+
+
+@media (max-width: 768px) {
+  .sidebar-app {
+    width: 100vw;      
+    height: 100vh;     
+    padding: 20px 15px;
+    box-shadow: none;  
+    font-size: 18px;   
+  }
+
+}
+

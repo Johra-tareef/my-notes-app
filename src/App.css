@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+
+  .app {
+  background-color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: 'Inter', sans-serif;
+
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,48 @@
+
+
+@media (max-width: 768px) {
+
+
+.header-row {
+  position: relative;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+}
+
+
+
+ .mobile-header p {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 8px;
+    text-align: center; 
+  }
+
+
+
+.backbtn {
+  position: absolute;
+  left: 0; 
+  color: #4E61F6;
+  background-color: #ffff;
+  border-color: #ffff;
+  border-style: none;
+  display: flex;           
+  align-items: center; 
+}
+
+
+
+
+.mobile-divider {
+    height: 1px;
+    background-color: #4E61F6;
+    margin: 10px -15px 15px -15px;
+    display: block;
+  }
+
+} 
+
+ 
