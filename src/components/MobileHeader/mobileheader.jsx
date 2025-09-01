@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function MobileHeader({ showBackBtn = false, onAddNote }) {
+function MobileHeader({ showBackBtn = false, onAddNote, activeNote }) {
 
   const navigate = useNavigate();
   
@@ -17,7 +17,7 @@ function MobileHeader({ showBackBtn = false, onAddNote }) {
           <button className="backbtn" onClick={() => navigate('/')}>
             <img src={vector} alt="back" />
           </button>
-          <p>My Notes App</p>
+          <p>{activeNote?.title || "My Notes App"}</p>
         </div>
       ) : (
         <p>My Notes App</p>

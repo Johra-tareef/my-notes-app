@@ -7,6 +7,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 16px;
+  
 
 } 
 
@@ -15,7 +17,7 @@
   display: flex;
   justify-content: space-between;  
   align-items: center;             
-  padding: 12px 16px;
+  padding: 10px;
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;                 
@@ -35,6 +37,17 @@
   gap: 6px;
 }
 
+.priority-header {
+  font-family: 'Inter', sans-serif;
+  color: #131927;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+
+}
+
+
+
 
 
 @media (max-width: 768px) {
@@ -49,6 +62,10 @@
     padding: 0;
     margin: 0;
     background-color: #E5E7EA;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+
   }
 
   .note-item {
@@ -59,4 +76,15 @@
     .edit-label {
     display: inline;
   }
+
+  .priority-header {
+  background-color: #F9FAFB;
+  margin: 0;
+
+
+}
+
+
+
+
 }

@@ -3,53 +3,42 @@ import "./app-main.css";
 import Saved from "./Saved/saved.jsx";
 import NoteTitle from "./NoteTitle/notetitle.jsx";
 import NoteContent from "./NoteContent/notecontent.jsx";
+import NotePriority from "./NoteContent/notepriority.jsx";
 import MobileHeader from "../MobileHeader/mobileheader.jsx";
-import useMediaQuery from '../../hooks/useMediaQuery';
-
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 function AppMain({ activeNote, onUpdateNote }) {
-
   const [showSaved, setShowSaved] = useState(false);
 
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
+  const onEditField = (priority, Newvalue) => {
+    if (Newvalue !== activeNote[priority]) {
+      onUpdateNote({
+        ...activeNote,
+        [priority]: Newvalue,
+      });
 
-    const onEditField = (field, value) => {
+      setShowSaved(true);
+      setTimeout(() => setShowSaved(false), 2000);
+    }
+  };
 
-       if (value !== activeNote[field]) {
+  return (
+    <div className="app-main">
+      {isMobile && <MobileHeader showBackBtn={true} activeNote={activeNote} />}
 
-    onUpdateNote({
-      ...activeNote,
-      [field]: value,
-    });
+      <div className="title-content-container">
+        <Saved show={showSaved} />
 
-    setShowSaved(true);
-    setTimeout(() => setShowSaved(false), 2000);
+        <NoteTitle activeNote={activeNote} onEditField={onEditField} />
 
-  }
-};
+        <NotePriority activeNote={activeNote} onEditField={onEditField} />
 
-    return (
-    
-    <div className='app-main'>
-      
-      {isMobile && <MobileHeader showBackBtn={true} />}
-
-        <div className="title-content-container">
-
-          <Saved show={showSaved} />
-
-          <NoteTitle activeNote={activeNote} onEditField={onEditField} />
-
-          <NoteContent activeNote={activeNote} onEditField={onEditField} />
-          
-            
-        </div>
-       
-
+        <NoteContent activeNote={activeNote} onEditField={onEditField} />
+      </div>
     </div>
-    )
+  );
 }
-
 
 export default AppMain;

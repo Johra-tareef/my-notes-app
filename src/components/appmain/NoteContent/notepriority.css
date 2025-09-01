@@ -1,37 +1,35 @@
-.app-note-content {
+.app-note-priority {
   display: flex;
   flex-direction: column;
   margin: 30px;
   padding: 15px;
 }
 
-.note-content {
+.priority-note {
   color: #131927;
   font-size: 16px;
   font-weight: 500;
+  line-height: 24px;
 
 }
 
-#content {
+#selected-priority {
   font-size: 14px;
   font-weight: 400;
   color: #9EA2AE;
   background-color: #F9FAFB;
   border-radius: 8px;
   border-color: #E5E7EA;
-  height: 40vh;
-
+  height: 35px;
 }
 
 @media (max-width: 768px) {
-  .app-note-content {
+  .app-note-priority {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding-top: 1.5rem;
   margin: 0;
 }
-
-
 
 }
