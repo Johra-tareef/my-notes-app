@@ -4,50 +4,78 @@ import "./App.css";
 import Sidebar from "./components/sidebar/sidebar.jsx";
 import AppMain from "./components/appmain/app-main.jsx";
 import useMediaQuery from "./hooks/useMediaQuery";
+import { getDocs, addDoc, doc, updateDoc, collection } from "firebase/firestore";
+import { db } from "./firebase/firebase"; 
+
+
 
 function App() {
-  const [notes, setNotes] = useState(
-    localStorage.notes ? JSON.parse(localStorage.notes) : []
-  );
+  const [notes, setNotes] = useState([]);
 
-  const [noteCount, setNoteCount] = useState(() => {
-    const savedNotes = localStorage.notes ? JSON.parse(localStorage.notes) : [];
-    const lastNoteNumber = savedNotes.reduce((max, note) => {
-      const match = note.title.match(/Note (\d+)/);
-      const num = match ? parseInt(match[1], 10) : 0;
-      return Math.max(max, num);
-    }, 0);
-    return lastNoteNumber + 1;
-  });
+  const [noteCount, setNoteCount] = useState(1);
 
   const [activeNote, setActiveNote] = useState(null);
 
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
-    localStorage.setItem("notes", JSON.stringify(notes));
-  }, [notes]);
+    const fetchNotes = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "notes"));
+        const fetchedData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+
+        }));
+
+        setNotes(fetchedData);
+
+        const lastNoteNumber = fetchedData.reduce((max, note) => {
+        const match = note.title.match(/Note (\d+)/);
+        const num = match ? parseInt(match[1], 10) : 0;
+        return Math.max(max, num);
+      }, 0);
+      setNoteCount(lastNoteNumber + 1);
+
+      }
+      catch (error){
+        console.error("Error fetching documents:", error); 
+
+      }
+
+    };
+    fetchNotes();
+  }, []);
 
 
-  const onAddNote = () => {
+  const onAddNote = async () => {
     const newNote = {
-      id: Date.now(),
       title: `Note ${noteCount}`,
       content: "",
       priority: "priority"
     };
-    setNotes((prev) => [...prev, newNote]);
+
+    const docRef = await addDoc(collection(db, "notes"), newNote);
+    setNotes(prev => [...prev, { ...newNote, id: docRef.id }]);
     setNoteCount((prev) => prev + 1);
-    setActiveNote(newNote.id);
+    setActiveNote(docRef.id);
   };
 
-  const onUpdateNote = (updatedNote) => {
+  const onUpdateNote = async (updatedNote) => {
     const updatedNotesArr = notes.map((note) => {
       if (note.id === updatedNote.id) return updatedNote;
       return note;
     });
     setNotes(updatedNotesArr);
-  };
+
+      try {
+    const docRef = doc(db, "notes", updatedNote.id);
+    await updateDoc(docRef, updatedNote);
+  } catch (error) {
+    console.error("Error updating note in Firestore:", error);
+  }
+};
+
 
   const getActiveNote = () => {
     return notes.find((note) => note.id === activeNote);
