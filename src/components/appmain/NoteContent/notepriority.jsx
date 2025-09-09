@@ -1,4 +1,4 @@
-import "./notepriority.css";
+import "./NotePriority.css";
 
 function NotePriority({ activeNote, onEditField }) {
 

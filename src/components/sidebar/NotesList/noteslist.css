@@ -60,8 +60,8 @@
 
   .notes-list {
     padding: 0;
-    margin: 0;
-    background-color: #E5E7EA;
+    margin: 1rem;
+    background-color: #F9FAFB;
     border-radius: 8px;
     margin-bottom: 16px;
     overflow: hidden;
@@ -78,8 +78,7 @@
   }
 
   .priority-header {
-  background-color: #F9FAFB;
-  margin: 0;
+    margin: 1rem;
 
 
 }

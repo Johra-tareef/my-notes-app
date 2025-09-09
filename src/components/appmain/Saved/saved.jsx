@@ -1,4 +1,4 @@
-import "./saved.css";
+import "./Saved.css";
 
 
 function Saved({ show }) {

@@ -1,9 +1,10 @@
 .app-note-title {
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 15px;
   padding: 15px;
   padding-top: 4rem;
+  
 }
 
 .title-note {

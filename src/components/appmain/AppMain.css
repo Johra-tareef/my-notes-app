@@ -1,25 +1,28 @@
 .app-main {
   width: 75%;
   height: 100%;
+    display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .no-active-note {
-  width: 70%;
-  height: 100vh;
-  line-height: 100vh;
   text-align: center;
   font-size: 2rem;
   color: #999;
+  margin-top: 20rem;
 }
 
 .title-content-container {
-  /* height: 80%; */
+  height: 80%;
   border-radius: 18px;
   box-shadow: 1px 0px 9px 1px rgba(0, 0, 0, 0.25);
   margin: 50px;
   position: relative;
+  
 
 }
+
 
 
 @media (max-width: 768px) {

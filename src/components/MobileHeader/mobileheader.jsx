@@ -1,39 +1,33 @@
-import "./mobileheader.css";
+import "./MobileHeader.css";
 import vector from "../../assets/Vector.svg";
 import { useNavigate } from "react-router-dom";
 
 
-
-
-function MobileHeader({ showBackBtn = false, onAddNote, activeNote }) {
-
-  const navigate = useNavigate();
-  
-
-    return (
+function MobileHeader({ showBackBtn = false, onBack, title = "My Notes App", onAddUser }) {
+  return (
     <div className="mobile-header">
       {showBackBtn ? (
         <div className="header-row">
-          <button className="backbtn" onClick={() => navigate('/')}>
+          <button className="backbtn" onClick={onBack}>
             <img src={vector} alt="back" />
           </button>
-          <p>{activeNote?.title || "My Notes App"}</p>
+          <p>{title}</p>
         </div>
       ) : (
-        <p>My Notes App</p>
+        <p>{title}</p>
       )}
 
       <div className="mobile-divider"></div>
-       {onAddNote && (
+
+      {onAddUser && (
         <div className="btn-container">
-          <button className="add-note-btn" onClick={onAddNote}>
-            + Add Note
+          <button className="add-user-button" onClick={onAddUser}>
+            + Add User
           </button>
         </div>
       )}
     </div>
   );
 }
-
 
 export default MobileHeader;

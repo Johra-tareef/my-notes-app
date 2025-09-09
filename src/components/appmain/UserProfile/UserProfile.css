@@ -1,0 +1,31 @@
+
+
+
+.switchbtn {
+    border-radius: 8px;
+    border: 2px solid #4E61F6;
+    color: #4E61F6;
+    font-size: 10px;
+    font-weight: 600;
+    height: 24px;
+    width: 66px;
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    right: 8rem;
+}
+
+.user-icon {
+
+    position: absolute;
+    top: 20px;
+    right: 6rem;
+
+}
+
+.user {
+    
+    position: absolute;
+    top: 20px;
+    right: 3rem;
+}

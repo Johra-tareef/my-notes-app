@@ -1,8 +1,9 @@
 .app-note-priority {
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 15px;
   padding: 15px;
+  
 }
 
 .priority-note {

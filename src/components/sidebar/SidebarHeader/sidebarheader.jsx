@@ -1,4 +1,4 @@
-import "./sidebarheader.css";
+import "./SidebarHeader.css";
 
 
 function SidebarHeader({ onAddNote }) {

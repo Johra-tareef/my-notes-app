@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./notetitle.css";
+import "./NoteTitle.css";
 
 function NoteTitle({ activeNote, onEditField }) {
   const [localTitle, setLocalTitle] = useState("");

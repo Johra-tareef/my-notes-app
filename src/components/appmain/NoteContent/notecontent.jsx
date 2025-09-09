@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./notecontent.css";
+import "./NoteContent.css";
 
 function NoteContent({ activeNote, onEditField }) {
   const [localContent, setLocalContent] = useState("");

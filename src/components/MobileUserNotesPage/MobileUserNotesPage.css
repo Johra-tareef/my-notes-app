@@ -1,5 +1,4 @@
 
-
 @media (max-width: 768px) {
 
 
@@ -12,7 +11,7 @@
 
 
 
- .mobile-header p {
+.user-name-header {
     font-size: 24px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
@@ -30,12 +29,12 @@
   border-color: #ffff;
   border-style: none;
   display: flex;           
-  align-items: center;
+  align-items: center; 
   margin-left: 2rem;
   margin-top: 1.5rem;
-
-
 }
+
+
 
 
 .mobile-divider {
@@ -45,7 +44,13 @@
     display: block;
   }
 
-.add-user-button {
+  .btn-container {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 0 15px 16px 15px;
+  }
+
+.add-note-btn {
 
   padding: 12px 16px;
   font-size: 14px;
@@ -55,11 +60,11 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
-
+  margin-right: 1rem;
 
 }
   
+}
 
-} 
 
  
