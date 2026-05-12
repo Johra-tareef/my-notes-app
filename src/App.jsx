@@ -11,6 +11,7 @@ import MobileUserModal from "./components/MobileUserModal/MobileUserModal.jsx";
 import MobileUserNotesPage from "./components/MobileUserNotesPage/MobileUserNotesPage.jsx";
 import MobileNoteDetailPage from "./components/MobileNoteDetailPage/MobileNoteDetailPage.jsx";
 import { useNavigate } from "react-router-dom";
+// import Hello from "./components/Hello.jsx";
 
 function App() {
   const navigate = useNavigate();
@@ -180,6 +181,13 @@ function App() {
             }
           />
 
+             {/* <Route
+            path="/Hello"
+            element={
+              <Hello />
+            }
+          /> */}
+
           <Route
             path="/user/:userId"
             element={
@@ -270,3 +278,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
